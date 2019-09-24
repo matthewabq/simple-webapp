@@ -1,4 +1,5 @@
 # Maven
+
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -26,3 +27,12 @@ steps:
     repository: matthewabq/simple-webapp
     command: 'build'
     Dockerfile: '**/Dockerfile'
+
+- task: twistcli-scan@1
+  inputs:
+    scanType: 'images'
+    vulnerabilityThreshold: 'high'
+    onlyFixed: true
+    gracePeriod: '0'
+    complianceThreshold: 'high'
+    artifact: 'matthewabq/simple-webapp'
