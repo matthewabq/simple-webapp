@@ -31,6 +31,7 @@ steps:
 - task: twistcli-scan@1
   inputs:
     scanType: 'images'
+    twistlockService: 'Twistlock Scanner'
     vulnerabilityThreshold: 'high'
     onlyFixed: true
     gracePeriod: '0'
