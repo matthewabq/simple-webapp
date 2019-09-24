@@ -23,5 +23,5 @@ steps:
 
 - task: Docker@2
   inputs:
-    command: 'build'
+    command: 'build -t matthewabq/simple-webapp'
     Dockerfile: '**/Dockerfile'
